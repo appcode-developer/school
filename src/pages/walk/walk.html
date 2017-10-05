@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar color="pizarra">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Como comprar</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+<ion-slides>
+
+  <ion-slide  *ngFor="let slide of slides" [ngStyle]="{'background-color': slide.color}">
+    <img class="image_walk" [src]="slide.imagen"/>
+    <h3 class="color_walk">{{slide.titulo}}</h3>
+    <p class="text_walk">{{slide.texto}}</p>
+  </ion-slide>
+
+</ion-slides>
+
+
+</ion-content>

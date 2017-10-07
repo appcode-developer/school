@@ -9,7 +9,7 @@
 
 <ion-content>
 
-<ion-item >
+<ion-item>
   <ion-thumbnail item-left>
     <img  src="https://firebasestorage.googleapis.com/v0/b/schoolbooks-db396.appspot.com/o/books%2Fbook01.png?alt=media&token=4384405e-190e-48c1-9c77-7f64f11ea4d5">
   </ion-thumbnail>
@@ -17,7 +17,7 @@
   <h3>Trampolín</h3>
   <p>Susaeta</p>
   </ion-label>
-  <ion-checkbox item-right color="secondary" checked="false"></ion-checkbox>
+  <ion-checkbox [(ngModel)]="trampolin" item-right color="secondary" checked="false"></ion-checkbox>
 </ion-item>
 
 <ion-item>
@@ -28,25 +28,8 @@
   <h3>Learning Journeys SE Pkg Pre-K 2</h3>
   <p>Pearson</p>
   </ion-label>
-  <ion-checkbox item-right color="secondary" checked="false"></ion-checkbox>
+  <ion-checkbox [(ngModel)]="learningJourneys" item-right color="secondary" checked="false"></ion-checkbox>
 </ion-item>
-<ion-card>
-  <ion-card-header class="color-bg">
-    <ion-icon name="school"></ion-icon> Selecciona tu Colegio
-  </ion-card-header>
-  <ion-card-content>
-     <ion-item>
-    <ion-label>Colegio:</ion-label>
-    <ion-select [(ngModel)]="Colegios" multiple="false" cancelText="Cancelar" okText="Listo">
-      <ion-option value="bacon">Brader</ion-option>
-      <ion-option value="olives">Real</ion-option>
-      <ion-option value="xcheese">Atenea</ion-option>
-      <ion-option value="xcheese">La Salle</ion-option>
-      <ion-option value="xcheese">Cultural</ion-option>
-    </ion-select>
-  </ion-item>
-  </ion-card-content>
-</ion-card>
 
 <ion-card>
   <ion-card-header class="color-bg">
@@ -55,10 +38,10 @@
   <ion-card-content>
      <ion-item>
     <ion-label>Tu color de forro:</ion-label>
-    <ion-select [(ngModel)]="Color" multiple="true" cancelText="Cancelar" okText="Listo">
-      <ion-option value="bacon">Rojo</ion-option>
-      <ion-option value="olives">Azul</ion-option>
-      <ion-option value="xcheese">Blanco</ion-option>
+    <ion-select [(ngModel)]="color" multiple="true" cancelText="Cancelar" okText="Listo">
+      <ion-option value="rojo">Rojo</ion-option>
+      <ion-option value="azul">Azul</ion-option>
+      <ion-option value="transparente">Transparente</ion-option>
     </ion-select>
   </ion-item>
   </ion-card-content>
@@ -72,16 +55,18 @@
   <ion-card-content>
      <ion-item>
     <ion-label>Pagaras con:</ion-label>
-    <ion-select [(ngModel)]="Pago" multiple="true" cancelText="Cancelar" okText="Listo">
-      <ion-option value="bacon">Efectivo</ion-option>
-      <ion-option value="olives">Tarjeta Crédito</ion-option>
-      <ion-option value="xcheese">ACH</ion-option>
+    <ion-select [(ngModel)]="pago" multiple="true" cancelText="Cancelar" okText="Listo">
+      <ion-option value="Efectivo">Efectivo</ion-option>
+      <ion-option value="Tarjeta Credito">Tarjeta Crédito</ion-option>
+      <ion-option value="ACH">ACH</ion-option>
     </ion-select>
   </ion-item>
   </ion-card-content>
 </ion-card>
- <button color="secondary" ion-button block type="submit">
+ <div padding>
+ <button  color="secondary" ion-button block type="submit" (click)="enviarDatos()">
       Enviar Datos
     </button>
+    </div>
 
 </ion-content>

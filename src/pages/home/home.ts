@@ -28,7 +28,9 @@ export class HomePage {
   
 
  myDepartamento() {
-  	this.navCtrl.push (GradebasePage);
+  	this.navCtrl.push (GradebasePage,{
+      colegio:"colegio brader"
+    });
 
   }
 
